@@ -1,0 +1,51 @@
+
+#app {
+  max-width: 90%;
+}
+
+label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+}
+
+input[type=submit] {
+  background: #03a9f4;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  height: 48px;
+  line-height: 48px;
+  letter-spacing: .8px;
+  margin-bottom: 50px;
+  padding: 0 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+textarea {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 0;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
