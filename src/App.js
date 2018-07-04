@@ -1,41 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
-import countWord from './lib/countWord.js';
+import countWord from './lib/countWord';
 
-class App extends Component {
-
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: '', result: undefined};
+    this.state = { value: '', result: undefined };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    this.setState({value: e.target.value});
+    this.setState({ value: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const result = countWord(this.state.value, 2);
-    this.setState({result: result});
+    this.setState({ result });
   }
 
   renderResult(result) {
-    const content = Object.keys(result).map((key) => {
-      return <tr key={key}>
-        <td>{key}</td>
-        <td>{result[key]}</td>
-      </tr>;
-    });
-
-    return content;
+    return Object.keys(result).map(key => <tr key={key}><td>{key}</td><td>{result[key]}</td></tr>);
   }
 
   render() {
-    const result = this.state.result;
-
     return (
       <div className="app">
         <form className="scan-form" onSubmit={this.handleSubmit}>
@@ -47,13 +37,13 @@ class App extends Component {
           ></textarea>
           <input type="submit" value="Compter" />
         </form>
-        {(result !== undefined) && (
+        {(this.state.result !== undefined) && (
           <table>
             <tbody>
               <tr>
                 <th>Mots :</th>
               </tr>
-              {this.renderResult(result)}
+              {this.renderResult(this.state.result)}
             </tbody>
           </table>
         )}
@@ -64,12 +54,12 @@ class App extends Component {
 
 App.propTypes = {
   value: PropTypes.string,
-  result: PropTypes.object
+  result: PropTypes.object,
 };
 
 App.defaultProps = {
   value: '',
-  result: {}
+  result: {},
 };
 
 export default App;

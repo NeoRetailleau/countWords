@@ -1,16 +1,16 @@
-const parseString = (string) => string.toLowerCase().split(' ');
+const parseString = string => string.toLowerCase().split(' ');
 
 const countItem = (array, minChar = 2) => {
-  const  count = {};
-  array.forEach((i, key) => {
+  const count = {};
+  array.forEach((i) => {
     if (i.length > minChar) {
-      count[i] = (count[i]||0) + 1;
+      count[i] = (count[i] || 0) + 1;
     }
   });
   return count;
-}
+};
 
-const removeChar = (string) => string.replace(/[^\w\s]/gi, '');
+const removeChar = string => string.replace(/[^\w\s]/gi, '');
 
 const countWord = (string, minChar = 2) => countItem(parseString(removeChar(string)), minChar);
 
