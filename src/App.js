@@ -45,7 +45,7 @@ class App extends Component {
             value={this.state.value}
             onChange={this.handleChange}
           ></textarea>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Compter" />
         </form>
         {(result !== undefined) && (
           <table>
