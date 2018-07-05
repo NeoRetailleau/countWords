@@ -41,7 +41,7 @@ class App extends React.Component {
           <table>
             <tbody>
               <tr>
-                <th>Mots :</th>
+                <th>Résultat ({Object.keys(this.state.result).length}) :</th>
               </tr>
               {this.renderResult(this.state.result)}
             </tbody>
